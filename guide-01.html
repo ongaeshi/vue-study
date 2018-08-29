@@ -34,6 +34,14 @@
         <input v-model="message">
     </div>
 
+    <div id="app-6a">
+        <input v-model="input">
+        <p>
+            10->16: {{ Number(input).toString(16) }}<br/>
+            16->10: {{ parseInt(input, 16) }}
+        </p>
+    </div>
+    
     <!-- 開発バージョン、便利なコンソールの警告が含まれています -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
@@ -89,6 +97,13 @@
             el: '#app-6',
             data: {
                 message: 'Hello Vue!'
+            }
+        })             
+   
+        var app6a = new Vue({
+            el: '#app-6a',
+            data: {
+                input: "",
             }
         })             
     </script>
