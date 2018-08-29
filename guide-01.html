@@ -27,6 +27,7 @@
     <div id="app-5">
         <p>{{ message }}</p>
         <button v-on:click="reverseMessage">Reverse Message</button>
+        <button v-on:click="add">Add</button>
     </div>
 
     <div id="app-6">
@@ -89,6 +90,10 @@
             methods: {
                 reverseMessage: function () {
                     this.message = this.message.split('').reverse().join('')
+                },
+
+                add: function () {
+                    this.message += "a";
                 }
             }
         })   
