@@ -7,19 +7,20 @@
 </head>
 <body>
   <div id="app">
-      <input v-model.number="budget"> 円以下に絞り込む
-      <input v-model.number="limit"> 件を表示
+    <input v-model.number="budget"> 円以下に絞り込む
+    <input v-model.number="limit"> 件を表示
+    <button v-on:click="order=!order">切り替え</button>
 
-      <p>{{ matched.length }} 件中 {{ limited.length }} 件を表示中</p>
+    <p>{{ matched.length }} 件中 {{ limited.length }} 件を表示中</p>
 
-      <ul>
-        <li v-for="item in limited" v-bind:key="item.id">
-          {{ item.name }} {{ item.price }}円
-        </li>
-      </ul>
-
+    <ul>
+      <li v-for="item in limited" v-bind:key="item.id">
+        {{ item.name }} {{ item.price }}円
+      </li>
+    </ul>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-  <script src="main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

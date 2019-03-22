@@ -13,6 +13,7 @@ new Vue({
         { id: 4, name: 'おれんじ', price: 300 },
         { id: 5, name: 'めろん', price: 500 }
       ],
+      order: false
     },
     computed: {
       // budget以下のリストを返す算出プロパティ
@@ -21,9 +22,12 @@ new Vue({
           return el.price <= this.budget
         }, this)
       },
+      sorted: function() {
+          return _.orderBy(this.matched, 'price', this.order ? 'desc' : 'asc')
+      },
       // matchedで返ったデータをlimit件返す算出プロパティ
       limited: function () {
-        return this.matched.slice(0, this.limit)
+        return this.sorted.slice(0, this.limit)
       }
     }
   })
